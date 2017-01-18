@@ -451,7 +451,9 @@ void SystemData::loadTheme()
 	{
 		// build map with system variables for theme to use,
 		std::map<std::string, std::string> sysData;
-		sysData.insert(std::pair<std::string, std::string>("systemName", getName()));
+		sysData.insert(std::pair<std::string, std::string>("system.name", getName()));
+		sysData.insert(std::pair<std::string, std::string>("system.theme", getThemeFolder()));
+		sysData.insert(std::pair<std::string, std::string>("system.fullName", getFullName()));
 		
 		mTheme->loadFile(sysData, path);
 	} catch(ThemeException& e)

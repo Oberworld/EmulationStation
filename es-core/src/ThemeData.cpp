@@ -157,9 +157,10 @@ std::string resolvePlaceholders(const char* in)
 		
 	std::string inStr(in);
 	
-	boost::xpressive::sregex rex = "${" >> (boost::xpressive::s1 = +boost::xpressive::_w) >> '}';
+	using namespace boost::xpressive;
+	sregex rex = "${" >> (s1 = +('.' | _w)) >> '}';
     
-	std::string output = boost::xpressive::regex_replace(inStr, rex, format_variables);
+	std::string output = regex_replace(inStr, rex, format_variables);
 
 	return output;
 }
