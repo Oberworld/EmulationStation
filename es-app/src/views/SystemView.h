@@ -12,8 +12,8 @@ class AnimatedImageComponent;
 
 struct SystemViewData
 {
-	std::shared_ptr<GuiComponent> logo;
-	std::shared_ptr<GuiComponent> logoSelected;
+	std::shared_ptr<GuiComponent> logo = NULL;
+	std::shared_ptr<GuiComponent> logoSelected = NULL;
 	std::shared_ptr<ThemeExtras> backgroundExtras;
 };
 
